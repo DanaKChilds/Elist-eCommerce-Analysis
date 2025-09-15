@@ -4,6 +4,8 @@
 
 Founded as a digital-first electronics retailer, Elist sells devices and accessories through web and mobile channels. Coming out of the pandemic demand surge, leadership wants a grounded view of how sales have normalized, which products truly drive the business, and whether their loyalty program is delivering sufficient ROI to justify its continuation.
 
+**Elist rode a pandemic surge with strong Q4 seasonality, then normalized in 2022. The loyalty program concentrates volume (many months where member orders meet or beat non-members) but trails on long-run AOV, with clear windows where members out-spend non-members.**
+
 This repository includes a stakeholder-ready set of insights, a reproducible SQL workbook, and recommendations that map directly to budget and planning levers.
 
 ## Dataset Structure
@@ -52,8 +54,19 @@ In order to evaluate Elist’s performance, we focused on the following key metr
 - **Revenue parity moments:** Member revenue **matches or surpasses** non-member revenue in several 2021 months (e.g., **Dec 2021: $507.7K loyalty vs $374.7K non-loyalty**), driven by higher member order counts despite mixed AOV.
 
 <img width="670" height="388" alt="image" src="https://github.com/user-attachments/assets/1695c8f8-68be-4535-b29e-9a289cbb18bb" />
+
+*Figure 1 — Monthly Orders:* pronounced Q4 spikes; surge through 2020–2021; normalization in 2022.  
+
+
 <img width="670" height="380" alt="image" src="https://github.com/user-attachments/assets/6ad92558-f302-43fe-a069-656eea056dc3" />
+
+*Figure 2 — AOV (purchase_ts):* step-up in 2020, then compression in 2021–2022; loyalty outperforms in several months.  
+
+
 <img width="668" height="384" alt="image" src="https://github.com/user-attachments/assets/29accb8d-e1f9-4ef1-823a-7f4950a4af06" />
+
+*Figure 3 — Cohorts:* loyalty reaches parity/exceeds on order count in multiple 2021 months; select months show higher member revenue despite lower long-run AOV.
+
 
 ## Recommendations
 
