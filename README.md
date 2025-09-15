@@ -28,30 +28,34 @@ This dataset consists of four tables, including information on customers, orders
 
 In order to evaluate Elist’s performance, we focused on the following key metrics:
 
-- **Monthly Orders:** Count of shipped orders by month (seasonality + MoM/YoY growth).  
-- **Average Order Value (AOV):** Yearly average USD order value.
-- **Refund Rate:** Share of orders with a refund flag; monitored by product and year.
-- **Loyalty Program Signals:** Adoption, time-to-first-purchase, AOV / order frequency vs. non-loyalty.  
+- **Monthly Orders:** Seasonality and growth (ship_ts)
+- **Average Order Value (AOV):** Trends by year/month and cohort (purchase_ts)
+- **Refund Rate:** By product, channel, and country
+- **Loyalty Signals:** Member vs non-member order share, revenue, and AOV
 
 ### Order Volume & Growth
-- Demand surges through the pandemic with a clear **Q4 peak**, remains elevated into late 2021, and **normalizes in 2022** with softer monthlies.  
-- YoY profile: **strong expansion 2019→2020**, **moderation in 2021**, and a **pullback in 2022** as the pandemic bump unwinds.
+- Volume climbs through 2020, stays elevated into 2021, then steps down through 2022; Q4 is the most reliable spike each year.
+- Member orders and revenue **overtake non-members for much of 2021 through Sep-2022**, before both cohorts cool.
+- The volume curve is consistent across major categories: fast run-up, holiday peak, then taper.
 
 ### Product Mix & Category Notes
-- **Apple AirPods** lead unit volume across months, spiking to **1,851 units (Dec 2020)**.  
-- **27in 4K Gaming Monitor** shows a pandemic spike with **851 units (Dec 2020)**; remains holiday-sensitive afterward.  
-- **Webcams** exhibit remote-work spikes (e.g., **307 units in Dec 2020**) before tapering to lower baselines.
+- Members **over-index on AirPods, Webcams, and the 27" 4K Monitor**; **MacBook** skews non-member.
+- Bose Soundsport weakens for members in 2022 relative to 2021.
 
 ### Average Order Value (AOV)
-- AOV **accelerates into 2020** and **compresses through 2021–2022**, reflecting a mix shift toward lower-ticket accessories and fewer high-ticket orders.
+- Non-member AOV surges in 2020, then compresses through 2021–2022; member AOV is steadier.
+- Clear **inversion windows** (mid-2021 to early-2022) where **member AOV ≥ non-member**.
 
-### Refunds & Operations
-- Refunds **elevate during the 2020 surge** and **improve in 2021**; the apparent **zero in 2022** likely reflects posting/completeness timing and should be validated before external use.
+### Refunds
+- **Apple items refund more often** than non-Apple; **laptops** lead refund rates.
+- **Refunded orders are higher value** than fulfilled orders, concentrating lost revenue; **MacBook Air** and the **27" monitor** account for the largest losses.
+- **US/GB/CA** show higher Apple refund rates than several other countries.
+- For Apple products, **direct/email/social** channels show higher refund incidence than those channels for non-Apple.
 
 ### Loyalty Program Performance
-- **AOV windows of strength:** Loyalty meets/exceeds non-loyalty in several months, including **Jul 2021 ($259.32 vs $215.57)**, **Dec 2021 ($257.69 vs $223.44)**, and **Jan 2022 ($244.20 vs $223.74)**.  
-- **Volume contribution:** Near-parity at the holiday peak (**Dec 2020 orders: 2,002 loyalty vs 2,017 non-loyalty**), with **multiple 2021 months where loyalty order counts exceed non-loyalty**.  
-- **Revenue parity moments:** Member revenue **matches or surpasses** non-member revenue in several 2021 months (e.g., **Dec 2021: $507.7K loyalty vs $374.7K non-loyalty**), driven by higher member order counts despite mixed AOV.
+- Members **match or exceed** non-members on **order count** in multiple 2021 months and maintain strength into Sep-2022.
+- **Member revenue** matches/exceeds non-member revenue across several 2021 months despite mixed AOV.
+- Members’ product mix tilts to **accessories and monitors**, aligning with their volume advantage.
 
 <img width="670" height="388" alt="image" src="https://github.com/user-attachments/assets/1695c8f8-68be-4535-b29e-9a289cbb18bb" />
 
@@ -70,28 +74,27 @@ In order to evaluate Elist’s performance, we focused on the following key metr
 
 ## Recommendations
 
-### 1) Q4 Loyalty Acceleration
-- Holiday months are the biggest spike each year.  
-- At the peak, loyalty keeps up or wins on volume (e.g., **Dec-2020:** 2,002 loyalty vs 2,017 non-loyalty; **Dec-2021:** 1,971 vs 1,678).  
-- Putting more focus on members in Oct–Dec builds on a pattern that already shows up in the **Order Count** chart.
+- **Q4 demand is the biggest spike and members match/exceed non-members on orders in peak months.**  
+  Shift more loyalty activity into **Oct–Dec** (promos, points boosts, reminders) to ride existing peaks; track lift in **member order share** and the **AOV gap** during Q4.
 
-### 2) Member AOV Uplift via Bundles
-- Overall, loyalty’s average order value is lower (**$240** vs **$275**), but there are clear months where members spend more per order (e.g., **Jul-2021:** $259.32 vs $215.57; **Dec-2021:** $257.69 vs $223.44; **Jan-2022:** $244.20 vs $223.74).  
-- AOV was highest in 2020 and then eased in 2021–2022, so it helps to recreate those “member-wins” months rather than fight the overall trend.
+- **Member AOV trails long-run ($240 vs $275) but shows clear inversion months (e.g., Jul/Dec-2021, Jan-2022).**  
+  Close the gap with **member-only bundles** that mirror those wins: anchor with **Monitors/Webcams/AirPods** (and MacBook where appropriate); aim for **AOV parity**.
 
-### 3) Always-On Attach at Checkout (Members)
-- Accessories surge with core devices in holidays (e.g., **Dec-2020:** AirPods **1,851** units, 27" 4K Monitor **851**, Webcam **307**).  
-- In several 2021 months, **member revenue meets or beats non-members** (e.g., **Dec-2021:** **$507.7K** loyalty vs **$374.7K** non-loyalty), mostly because members place more orders.  
-- Small, well-timed add-ons for members can lift AOV without needing more traffic.
+- **Email is the strongest revenue channel for members (notably 2020 & 2022).**  
+  Make **email the primary vehicle** for loyalty offers with a simple cadence (launch → reminder → last-chance); back it up with direct/social retargets. A/B test subject, offer, and timing.
 
-### 4) Member Mix & Frequency
-- Over 2019–2022, loyalty makes up about **42% of orders** (45,693 of 108,124) and **39% of sales** (~$11.0M of $28.1M).  
-- Members out-ordered non-members in multiple **2021** months (including December). Keeping a steady drumbeat for members helps keep that mix.
+- **Members over-index on accessories; attach rates drive member revenue even when AOV is flatter.**  
+  Add **always-on attach prompts** for members at cart/checkout (cables, cases, webcams, AirPods). Measure **attach rate** and **basket lift** per cohort.
 
-### 5) Refund Guardrail on Member Offers
-- Overall refund rate sits around **5%** (2019–2022 overall **4.97%**), was higher in **2020 (9.22%)**, and improved in **2021 (3.61%)**.  
-- When running member-only promos, watch member vs non-member refund rates so lift in AOV doesn’t come with more returns.
+- **Refunds cluster in high-value Apple/laptop orders; refunded orders have higher AOV than fulfilled.**  
+  Reduce risk with **pre-purchase compatibility/fit checks**, clearer specs, and **signature/confirmation** on high-ticket items. Monitor **refund rate & $ lost** before/after changes.
 
-## Appendix — Reproducibility
+- **Apple refunds are higher in direct/email/social than the same channels for non-Apple.**  
+  Add **gating content** in those flows (compatibility checkboxes, “what to expect” on returns) and throttle the most lenient offers on the highest-risk SKUs; compare **member vs non-member** refund deltas by channel.
 
-See `sql/Business Queries.sql` for AOV by year, product name normalization, refund rates, loyalty splits, and shipped-orders series.  
+- **Refunds disproportionately hit large orders.**  
+  Create a **large-order watchlist**: flag carts above a threshold for proactive confirmation and post-purchase guidance to protect revenue.
+
+## Appendix
+
+See `Data and Queries/Business Queries.sql` for AOV by year, product name normalization, refund rates, loyalty splits, and shipped-orders series.  
