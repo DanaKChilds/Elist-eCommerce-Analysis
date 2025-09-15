@@ -69,7 +69,7 @@ In order to evaluate Elist’s performance, we focused on the following key metr
 ### 3) Always-On Attach at Checkout (Members)
 - Accessories surge with core devices in holidays (e.g., **Dec-2020:** AirPods **1,851** units, 27" 4K Monitor **851**, Webcam **307**).  
 - In several 2021 months, **member revenue meets or beats non-members** (e.g., **Dec-2021:** **$507.7K** loyalty vs **$374.7K** non-loyalty), mostly because members place more orders.  
-- Small, well-timed add-ons for members can lift basket size without needing more traffic.
+- Small, well-timed add-ons for members can lift AOV without needing more traffic.
 
 ### 4) Member Mix & Frequency
 - Over 2019–2022, loyalty makes up about **42% of orders** (45,693 of 108,124) and **39% of sales** (~$11.0M of $28.1M).  
@@ -77,7 +77,6 @@ In order to evaluate Elist’s performance, we focused on the following key metr
 
 ### 5) Refund Guardrail on Member Offers
 - Overall refund rate sits around **5%** (2019–2022 overall **4.97%**), was higher in **2020 (9.22%)**, and improved in **2021 (3.61%)**.  
-- The **0.00%** shown for **2022** likely reflects timing/completeness of refund postings and should be double-checked.  
 - When running member-only promos, watch member vs non-member refund rates so lift in AOV doesn’t come with more returns.
 
 ## Appendix — Reproducibility
