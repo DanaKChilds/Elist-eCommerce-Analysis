@@ -20,6 +20,8 @@ In order to evaluate Elist’s performance, we focused on the following key metr
 - **Average Order Value (AOV):** Yearly average USD order value.  
 - **Loyalty Program Signals:** Adoption, time-to-first-purchase, AOV / order frequency vs. non-loyalty.  
 - **Refund Rate:** Share of orders with a refund flag; monitored by product and year.
+		
+<img width="712" height="169" alt="image" src="https://github.com/user-attachments/assets/92bbb4c9-d346-449b-a001-839972a697c2" />
 
 ### Order Volume & Growth
 - Demand **surged through 2020**, peaking at **4,019 orders in Dec 2020**, and stayed elevated into 2021 (e.g., **3,649 in Dec 2021**), then **normalized in 2022** with softer monthly totals.  
