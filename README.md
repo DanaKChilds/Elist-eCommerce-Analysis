@@ -73,6 +73,10 @@ In order to evaluate Elist’s performance, we focused on the following key metr
 
 *Figure 3 — Order Count:* loyalty reaches parity/exceeds on order count in multiple 2021 months; select months show higher member revenue despite lower long-run AOV.
 
+<img width="1418" height="844" alt="image" src="https://github.com/user-attachments/assets/f78308a7-4148-47ff-ba63-a9e3453f1376" />
+
+*Figure 4 - Order Count by Country:* Sales recorded in most countries showing global reach. Most orders placed in English-speaking countries and Europe. 
+*Please note that the United States (with 50,692 orders) has been excluded from this map for increased clarity.*
 
 
 ## Recommendations
