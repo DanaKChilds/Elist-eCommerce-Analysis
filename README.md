@@ -1,16 +1,16 @@
 # Elist eCommerce Insights - Project Overview
 
-**The goal of this project is to investigate multi-year order trends at Elist and translate them into clear recommendations on inventory, marketing, and loyalty-program strategy.** The analysis focuses on 2019–2022 and is designed to be scan-friendly for leadership and town-hall use.
+**The goal of this project is to investigate multi-year order trends at Elist and translate them into clear recommendations on inventory, marketing, and loyalty-program strategy to be shared with various stakeholder teams.** The analysis focuses on 2019–2022 and is designed to be scan-friendly for leadership and town-hall use.
 
 Founded as a digital-first electronics retailer, Elist sells devices and accessories through web and mobile channels. Coming out of the pandemic demand surge, leadership wants a grounded view of how sales have normalized, which products truly drive the business, and whether their loyalty program is delivering sufficient ROI to justify its continuation.
 
 **Elist rode a pandemic surge with strong Q4 seasonality, then normalized in 2022. The loyalty program concentrates volume (many months where member orders meet or beat non-members) but trails on long-run AOV, with clear windows where members out-spend non-members.**
 
-This repository includes a stakeholder-ready set of insights, a reproducible SQL workbook, and recommendations that map directly to budget and planning levers.
+This repository includes a stakeholder-ready set of insights, a reproducible SQL workbook, a high-level KPI dashboard, and recommendations that map directly to budget and planning levers.
 
 ## Dataset Structure
 
-This dataset consists of four tables, including information on customers, orders, order statuses, and geographic information.
+This dataset consists of five tables, including information on customers, suppliers, orders, order statuses, and geographic information.
 
 <img width="1875" height="1114" alt="image" src="https://github.com/user-attachments/assets/03b1c815-d25c-4056-a693-edac05d4eac6" />
 
@@ -26,17 +26,17 @@ This dataset consists of four tables, including information on customers, orders
 
 ## Insights Summary
 
-In order to evaluate Elist’s performance, we focused on the following key metrics:
+In order to evaluate Elist’s performance, I focused on the following key metrics:
 
-- **Monthly Orders:** Seasonality and growth (ship_ts)
-- **Average Order Value (AOV):** Trends by year/month and cohort (purchase_ts)
+- **Monthly Orders:** Seasonality and growth
+- **Average Order Value (AOV):** Trends by year/month
 - **Refund Rate:** By product, channel, and country
 - **Loyalty Signals:** Member vs non-member order share, revenue, and AOV
 
 ### Order Volume & Growth
 - Volume climbs through 2020, stays elevated into 2021, then steps down through 2022; Q4 is the most reliable spike each year.
 - Member orders and revenue **overtake non-members for much of 2021 through Sep-2022**, before both cohorts cool.
-- The volume curve is consistent across major categories: fast run-up, holiday peak, then taper.
+- The volume curve is consistent across major products: fast run-up, holiday peak, then taper.
 
 ### Product Mix & Category Notes
 - Members **over-index on AirPods, Webcams, and the 27" 4K Monitor**; **MacBook** skews non-member.
