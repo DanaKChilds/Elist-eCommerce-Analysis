@@ -1,18 +1,18 @@
 # Elist eCommerce Insights - Project Overview
 
-**The goal of this project is to investigate multi-year order trends at Elist and translate them into clear recommendations on inventory, marketing, and loyalty-program strategy.** The analysis focuses on 2019–2022 and is designed to be scan-friendly for leadership and town-hall use.
+**The goal of this project is to investigate multi-year order trends at Elist and translate them into clear recommendations on inventory, marketing, and loyalty-program strategy to be shared with various stakeholder teams.** The analysis focuses on 2019–2022 and is designed to be scan-friendly for leadership and town-hall use.
 
 Founded as a digital-first electronics retailer, Elist sells devices and accessories through web and mobile channels. Coming out of the pandemic demand surge, leadership wants a grounded view of how sales have normalized, which products truly drive the business, and whether their loyalty program is delivering sufficient ROI to justify its continuation.
 
 **Elist rode a pandemic surge with strong Q4 seasonality, then normalized in 2022. The loyalty program concentrates volume (many months where member orders meet or beat non-members) but trails on long-run AOV, with clear windows where members out-spend non-members.**
 
-This repository includes a stakeholder-ready set of insights, a reproducible SQL workbook, and recommendations that map directly to budget and planning levers.
+This repository includes a stakeholder-ready set of insights, a reproducible SQL workbook, a high-level KPI dashboard, and recommendations that map directly to budget and planning levers.
 
 ## Dataset Structure
 
-This dataset consists of four tables, including information on customers, orders, order statuses, and geographic information.
+This dataset consists of five tables, including information on customers, suppliers, orders, order statuses, and geographic information.
 
-<img width="1875" height="1114" alt="image" src="https://github.com/user-attachments/assets/8a0be6d0-4300-4d20-a403-baf5d4e4fad9" />
+<img width="1875" height="1114" alt="image" src="https://github.com/user-attachments/assets/03b1c815-d25c-4056-a693-edac05d4eac6" />
 
 ### KPIs At-a-Glance (2019–2022)
 
@@ -22,21 +22,21 @@ This dataset consists of four tables, including information on customers, orders
 - **AOV (Grand Totals):** Non-loyalty **$275** vs Loyalty **$240**  
 - **Refund Rate (All Products):** 2019 **5.73%**, 2020 **9.22%**, 2021 **3.61%**, 2022 **0.00%**; overall **4.97%**  
 
-<img width="712" height="169" alt="image" src="https://github.com/user-attachments/assets/92bbb4c9-d346-449b-a001-839972a697c2" />
+<img width="839" height="169" alt="image" src="https://github.com/user-attachments/assets/4ad56522-ad40-4c91-8bc1-96c4ba18af87" />
 
 ## Insights Summary
 
-In order to evaluate Elist’s performance, we focused on the following key metrics:
+In order to evaluate Elist’s performance, I focused on the following key metrics:
 
-- **Monthly Orders:** Seasonality and growth (ship_ts)
-- **Average Order Value (AOV):** Trends by year/month and cohort (purchase_ts)
+- **Monthly Orders:** Seasonality and growth
+- **Average Order Value (AOV):** Trends by year/month
 - **Refund Rate:** By product, channel, and country
 - **Loyalty Signals:** Member vs non-member order share, revenue, and AOV
 
 ### Order Volume & Growth
 - Volume climbs through 2020, stays elevated into 2021, then steps down through 2022; Q4 is the most reliable spike each year.
 - Member orders and revenue **overtake non-members for much of 2021 through Sep-2022**, before both cohorts cool.
-- The volume curve is consistent across major categories: fast run-up, holiday peak, then taper.
+- The volume curve is consistent across major products: fast run-up, holiday peak, then taper.
 
 ### Product Mix & Category Notes
 - Members **over-index on AirPods, Webcams, and the 27" 4K Monitor**; **MacBook** skews non-member.
@@ -57,19 +57,26 @@ In order to evaluate Elist’s performance, we focused on the following key metr
 - **Member revenue** matches/exceeds non-member revenue across several 2021 months despite mixed AOV.
 - Members’ product mix tilts to **accessories and monitors**, aligning with their volume advantage.
 
-<img width="670" height="388" alt="image" src="https://github.com/user-attachments/assets/1695c8f8-68be-4535-b29e-9a289cbb18bb" />
+<img width="837" height="475" alt="image" src="https://github.com/user-attachments/assets/f7e6ac4c-9cc3-4985-8cb6-ed1c37916cda" />
 
-*Figure 1 — Monthly Orders:* pronounced Q4 spikes; surge through 2020–2021; normalization in 2022.  
-
-
-<img width="670" height="380" alt="image" src="https://github.com/user-attachments/assets/6ad92558-f302-43fe-a069-656eea056dc3" />
-
-*Figure 2 — AOV (purchase_ts):* step-up in 2020, then compression in 2021–2022; loyalty outperforms in several months.  
+*Figure 1 — Monthly Sales:* pronounced Q4 spikes; surge through 2020–2021; normalization in 2022.  
 
 
-<img width="668" height="384" alt="image" src="https://github.com/user-attachments/assets/29accb8d-e1f9-4ef1-823a-7f4950a4af06" />
 
-*Figure 3 — Cohorts:* loyalty reaches parity/exceeds on order count in multiple 2021 months; select months show higher member revenue despite lower long-run AOV.
+<img width="838" height="485" alt="image" src="https://github.com/user-attachments/assets/f689943c-2fc1-4710-96dd-a7d3e731f1b5" />
+
+*Figure 2 — Average Order Value:* step-up in 2020, then compression in 2021–2022; loyalty outperforms in several months.  
+
+
+
+<img width="835" height="480" alt="image" src="https://github.com/user-attachments/assets/94621264-7b19-4379-b93b-7d889ce41f9c" />
+
+*Figure 3 — Order Count:* loyalty reaches parity/exceeds on order count in multiple 2021 months; select months show higher member revenue despite lower long-run AOV.
+
+<img width="1418" height="844" alt="image" src="https://github.com/user-attachments/assets/f78308a7-4148-47ff-ba63-a9e3453f1376" />
+
+*Figure 4 - Order Count by Country:* Sales recorded in most countries showing global reach. Most orders placed in English-speaking countries and Europe. 
+*Please note that the United States (with 50,692 orders) has been excluded from this map for increased clarity.*
 
 
 ## Recommendations
@@ -99,8 +106,8 @@ In order to evaluate Elist’s performance, we focused on the following key metr
 
   This dashboard lets users filter by purchase month, product, region, and loyalty status, and highlights trends and performance across total sales, average order value, order count, refund rate, top products, regional contribution, and Member vs Non-Member comparisons.
 
-<img width="1404" height="785" alt="image" src="https://github.com/user-attachments/assets/b24bd6af-a561-4e4b-ba8c-15a3ca64d84f" />
+<img width="1552" height="874" alt="image" src="https://github.com/user-attachments/assets/cbad7130-0676-4af9-8e0e-433dc81e4d26" />
 
 ## Appendix
 
-See `Data and Queries/Business Queries.sql` for AOV by year, product name normalization, refund rates, loyalty splits, and various other metrics.  
+See `Data and Queries/Elist SQL Queries.sql` for AOV by year, product name normalization, refund rates, loyalty splits, and various other metrics.  
