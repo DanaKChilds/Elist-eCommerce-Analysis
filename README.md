@@ -6,7 +6,7 @@ Founded as a digital-first electronics retailer, Elist sells devices and accesso
 
 **Elist rode a pandemic surge with strong Q4 seasonality, then normalized in 2022. The loyalty program concentrates volume (many months where member orders meet or beat non-members) but trails on long-run AOV, with clear windows where members out-spend non-members.**
 
-This project also includes a machine learning-based Recommendation Engine that uses sign-up context to generate Top-K product suggestions for new members. It is designed to run at sign-up and feed a short recommendations block into the welcome email to accelerate first-order conversionn.
+This project also includes a machine learning-based Recommendation Engine that uses sign-up context to generate Top-K product suggestions for new members. It is designed to run at sign-up and feed a short recommendations block into the welcome email to accelerate first-order conversion. This model was able to to achieve **~95%** accuracy on the test set.
 
 This repository includes a stakeholder-ready set of insights, a reproducible SQL workbook, a high-level KPI dashboard, a Recommendation Engine, and recommendations that map directly to budget and planning levers.
 
@@ -123,13 +123,89 @@ My Recommendation Engine suggests a short list of Top-K products for brand-new m
 
 Install:
 
-``
+```
 pip install -U scikit-learn pandas numpy joblib
-``
+```
 
 **2. Data Location**
 
+Replace the current path (below) with the new data path:
 
+```
+path = r"c:\Users\danac\OneDrive - OneWorkplace\Documents\Elist\Elist ML Data.csv"
+```
+
+**3. Train & save the model (in the notebook)**
+-Run the training cells (GridSearchCV). You’ll see Top-3 accuracy printed.
+-Persist the fitted pipeline (best_model) with:
+
+```
+from pathlib import Path
+import joblib
+
+ARTIFACTS_PATH = Path("models/recommendation_engine.joblib")
+ARTIFACTS_PATH.parent.mkdir(parents=True, exist_ok=True)
+
+joblib.dump({
+    "model": best_model,
+    "label_encoder": le,
+    "feature_cols": list(X.columns),  # must match the columns used to train
+}, ARTIFACTS_PATH)
+
+print(f"Saved → {ARTIFACTS_PATH}")
+
+```
+
+**4. Use the saved model**
+
+```
+
+import joblib, pandas as pd, numpy as np
+from datetime import datetime
+from pathlib import Path
+
+ARTIFACTS_PATH = Path("models/recommendation_engine.joblib")
+
+def recommend_topk(
+    context: dict,
+    when: str | datetime | None = None,
+    topk: int = 3,
+    artifacts_path: Path = ARTIFACTS_PATH,
+):
+    art = joblib.load(artifacts_path)
+    model = art["model"]; le = art["label_encoder"]; feature_cols = art["feature_cols"]
+
+    # Derive time features (year, month) — matches training
+    ts = pd.to_datetime(when) if when is not None else pd.Timestamp.utcnow()
+    base = {"ts_year": int(ts.year), "ts_month": int(ts.month)}
+
+    # Build one-row input with expected columns
+    row = {c: base.get(c, None) for c in feature_cols}
+    for k, v in (context or {}).items():
+        if k in row:
+            row[k] = v
+    X_one = pd.DataFrame([row], columns=feature_cols)
+
+    proba = model.predict_proba(X_one)[0]
+    k = min(int(topk), len(proba))
+    top_idx = np.argsort(proba)[-k:][::-1]
+    labels = le.inverse_transform(top_idx)
+    scores = proba[top_idx]
+    return [(str(lbl), float(s)) for lbl, s in zip(labels, scores)]
+```
+
+**Example**
+
+```
+recommend_topk({
+    "purchase_platform": "Web",
+    "marketing_channel": "Email",
+    "account_creation_method": "Email",
+    "country_code": "US",
+    "region": "North America",
+    "loyalty_program": "Yes",
+}, when="2024-11-15T14:30:00Z", topk=3)
+```
 
 ## Appendix
 
