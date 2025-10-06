@@ -108,6 +108,16 @@ In order to evaluate Elist’s performance, I focused on the following key metri
 
 <img width="1552" height="874" alt="image" src="https://github.com/user-attachments/assets/cbad7130-0676-4af9-8e0e-433dc81e4d26" />
 
+## Recommendation Engine
+
+**What it does**
+
+My Recommendation Engine suggests a short list of Top-K products for brand-new members at sign-up using context I already collect (year/month, platform, channel, country/region, loyalty). After scoring, I can drop those picks into a “Top picks for your first order” email. These emails will be rolled out as an A/B test to new users seeking to increase first-order conversion rate. 
+
+#### How to Run
+
+**1. Prereqs
+
 ## Appendix
 
 See `Data and Queries/Elist SQL Queries.sql` for AOV by year, product name normalization, refund rates, loyalty splits, and various other metrics.  
