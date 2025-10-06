@@ -6,7 +6,9 @@ Founded as a digital-first electronics retailer, Elist sells devices and accesso
 
 **Elist rode a pandemic surge with strong Q4 seasonality, then normalized in 2022. The loyalty program concentrates volume (many months where member orders meet or beat non-members) but trails on long-run AOV, with clear windows where members out-spend non-members.**
 
-This repository includes a stakeholder-ready set of insights, a reproducible SQL workbook, a high-level KPI dashboard, and recommendations that map directly to budget and planning levers.
+This project also includes a machine learning-based Recommendation Engine that uses sign-up context to generate Top-K product suggestions for new members. It is designed to run at sign-up and feed a short recommendations block into the welcome email to accelerate first-order conversionn.
+
+This repository includes a stakeholder-ready set of insights, a reproducible SQL workbook, a high-level KPI dashboard, a Recommendation Engine, and recommendations that map directly to budget and planning levers.
 
 ## Dataset Structure
 
@@ -116,7 +118,18 @@ My Recommendation Engine suggests a short list of Top-K products for brand-new m
 
 #### How to Run
 
-**1. Prereqs
+**1. Prerequsites**
+- Python 3.9–3.12
+
+Install:
+
+``
+pip install -U scikit-learn pandas numpy joblib
+``
+
+**2. Data Location**
+
+
 
 ## Appendix
 
