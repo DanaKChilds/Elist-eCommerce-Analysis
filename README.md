@@ -1,4 +1,4 @@
-# Elist eCommerce Insights - Project Overview
+# Elist eCommerce Insights and Recommendation Engine - Project Overview
 
 **The goal of this project is to investigate multi-year order trends at Elist and translate them into clear recommendations on inventory, marketing, and loyalty-program strategy to be shared with various stakeholder teams.** The analysis focuses on 2019–2022 and is designed to be scan-friendly for leadership and town-hall use.
 
