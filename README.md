@@ -110,7 +110,9 @@ This Power BI dashboard lets users filter by purchase month, product, region, an
 
 **What it does**
 
-This New User Recommendation Engine suggests a short list of Top-K products for brand-new members at sign-up using context I already collect (year/month, platform, channel, country/region, loyalty). After scoring, these recommendations can be dropped directly into a “Top picks for your first order” section of the welcome email. These emails will be rolled out as an A/B test to new users seeking to increase first-order conversion rate. 
+This New User Recommendation Engine suggests a short list of Top-K products for brand-new members with context already collected at sign-up (year/month, platform, channel, country/region, loyalty). After scoring, these recommendations can be dropped directly into a “Top picks for your first order” section of the welcome email. These emails will be rolled out as an A/B test to new users seeking to increase first-order conversion rate. 
+
+A Histogram-based Gradient Boosting Classifier was chosen for this task largely because it provides the predict_proba function which allows for the ranking of products by likelihood and optimizes for top-K recommendations. This model also works great on tabular data and captures non-linear patterns and interactions between the features without the need for heavy engineering. It is also memory-effcient and handles one hot encoded categorical features well. 
 
 #### How to Run
 
