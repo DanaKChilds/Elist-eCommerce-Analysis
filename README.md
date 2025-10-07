@@ -110,7 +110,7 @@ This Power BI dashboard lets users filter by purchase month, product, region, an
 
 **What it does**
 
-This New User Recommendation Engine suggests a short list of Top-K products for brand-new members at sign-up using context I already collect (year/month, platform, channel, country/region, loyalty). After scoring, I can drop those picks into a “Top picks for your first order” email. These emails will be rolled out as an A/B test to new users seeking to increase first-order conversion rate. 
+This New User Recommendation Engine suggests a short list of Top-K products for brand-new members at sign-up using context I already collect (year/month, platform, channel, country/region, loyalty). After scoring, these recommendations can be dropped directly into a “Top picks for your first order” section of the welcome email. These emails will be rolled out as an A/B test to new users seeking to increase first-order conversion rate. 
 
 #### How to Run
 
