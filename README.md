@@ -12,9 +12,10 @@ This repository includes a stakeholder-ready set of insights, a reproducible SQL
 
 ## Dataset Structure
 
-This dataset consists of five tables, including information on customers, suppliers, orders, order statuses, and geographic information.
+This dataset consists of six tables, including information on customers, suppliers, orders, order statuses, and geographic information.
 
-<img width="1875" height="1114" alt="image" src="https://github.com/user-attachments/assets/03b1c815-d25c-4056-a693-edac05d4eac6" />
+<img width="1286" height="493" alt="Untitled (1)" src="https://github.com/user-attachments/assets/390f7b3d-220a-4c37-9696-bb233bf7131b" />
+
 
 ### KPIs At-a-Glance (2019–2022)
 
